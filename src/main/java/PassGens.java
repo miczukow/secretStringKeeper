@@ -10,11 +10,11 @@ public class PassGens {
         int tmpInt;
 
         for(int i = 0; i < lenght; ++i){
-            tmpInt = generator.nextInt(50);
-            if(tmpInt > 25)
-                tmpCh = (char) (tmpInt - 25 + 97);
-            else
+            tmpInt = generator.nextInt(52);
+            if(tmpInt < 26)
                 tmpCh = (char) (tmpInt + 65);
+            else
+                tmpCh = (char) (tmpInt - 26 + 97);
             pass += tmpCh;
         }
 
@@ -29,13 +29,13 @@ public class PassGens {
         int tmpInt;
 
         for(int i = 0; i < lenght; ++i){
-            tmpInt = generator.nextInt(60);
+            tmpInt = generator.nextInt(62);
             if(tmpInt < 26)
                 tmpCh = (char) (tmpInt + 65);
-            else if(tmpInt > 25 && tmpInt < 51)
-                tmpCh = (char) (tmpInt - 25 + 97);
+            else if(tmpInt > 25 && tmpInt < 52)
+                tmpCh = (char) (tmpInt - 26 + 97);
             else
-                tmpCh = (char)(tmpInt - 50 + 48);
+                tmpCh = (char)(tmpInt - 52 + 48);
             pass += tmpCh;
         }
         return pass;
