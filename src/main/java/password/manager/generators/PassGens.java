@@ -1,3 +1,5 @@
+package password.manager.generators;
+
 import java.util.Random;
 
 public class PassGens {
