@@ -5,7 +5,7 @@ import password.manager.generators.PasswordGeneratorFacade;
 
 public class PasswordFacade {
 
-    private PasswordGeneratorFacade passwordGeneratorFacade;
+    private PasswordGeneratorFacade passwordGeneratorFacade = new PasswordGeneratorFacade();
 
     public PasswordEntry generatePassword(String website, String login, GeneratorType strategy, int length) {
         String password = passwordGeneratorFacade.getPassword(length, strategy);
