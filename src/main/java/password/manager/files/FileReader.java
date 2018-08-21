@@ -1,5 +1,7 @@
 package password.manager.files;
 
+import password.manager.model.PasswordEntry;
+
 import java.io.IOException;
 import java.util.List;
 
