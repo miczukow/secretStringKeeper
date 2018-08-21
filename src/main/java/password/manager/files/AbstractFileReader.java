@@ -17,17 +17,17 @@ public abstract class AbstractFileReader implements FileReader {
 //        return new File(path);
     }
 
-    @Override
-    public List<PasswordEntry> getPasswordEntries(String path) throws IOException{
-        List<PasswordEntry> result = new ArrayList();
-        List<String> lines = read(path);
-
-        for(String line : lines){
-            String[] splitResult = line.split(";");
-            PasswordEntry passwordEntry = new PasswordEntry(splitResult[0], splitResult[1], splitResult[2]);
-            result.add(passwordEntry);
-        }
-
-        return result;
-    }
+//    @Override
+//    public List<PasswordEntry> getPasswordEntries(String path) throws IOException{
+//        List<PasswordEntry> result = new ArrayList();
+//        List<String> lines = read(path);
+//
+//        for(String line : lines){
+//            String[] splitResult = line.split(";");
+//            PasswordEntry passwordEntry = new PasswordEntry(splitResult[0], splitResult[1], splitResult[2]);
+//            result.add(passwordEntry);
+//        }
+//
+//        return result;
+//    }
 }
