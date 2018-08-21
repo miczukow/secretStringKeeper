@@ -22,4 +22,8 @@ public class PasswordEntry {
     public String getLogin() {
         return login;
     }
+
+    public String[] toArray(){
+        return new String[] {website, password, login};
+    }
 }
