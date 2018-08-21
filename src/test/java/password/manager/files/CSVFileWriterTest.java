@@ -14,8 +14,14 @@ public class CSVFileWriterTest {
     @Test
     public void testWritingToFile() throws IOException {
         PasswordFacade passwordFacade = new PasswordFacade();
-        CSVFileWriter writer = new CSVFileWriter();
-        writer.write("test.csv" , passwordFacade.generatePassword("poczta", "login", RANDOM_SYMBOLS, 10 ));
+        FilesFacade filesFacade = new FilesFacade();
+        filesFacade.writeFile("test.csv", passwordFacade.generatePassword(
+                "poczta",
+                "login",
+                LETTERS_AND_DIGITS,
+                10 ));
+//        CSVFileWriter writer = new CSVFileWriter();
+//        writer.write("test.csv" , passwordFacade.generatePassword("poczta", "login", RANDOM_SYMBOLS, 10 ));
     }
 
 }
