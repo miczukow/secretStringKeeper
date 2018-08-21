@@ -13,13 +13,13 @@ public class LinesFileReader extends AbstractFileReader{
 
     @Override
     public List<String> read(String path) throws IOException {
-        File file = getFile(path);
-        List<String> list = new ArrayList<>();
-        try{
-            list = Files.readAllLines(file.toPath());
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-        return list;
+//        File file = getFile(path);
+//        List<String> list = new ArrayList<>();
+//        try{
+//            list = Files.readAllLines(file.toPath());
+//        }catch (IOException e){
+//            e.printStackTrace();
+//        }
+        return Files.readAllLines(getFile(path).toPath());
     }
 }
