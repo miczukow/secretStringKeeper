@@ -33,5 +33,13 @@ public class FilesFacade {
         }
     }
 
+    public void writeFile(String path, List<String> list){
+        try{
+            fileWriter.write(path, list);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
 
 }
