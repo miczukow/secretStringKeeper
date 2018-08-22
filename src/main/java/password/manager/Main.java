@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.stream.Stream;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         AppView view = new AppView();
         view.appView();

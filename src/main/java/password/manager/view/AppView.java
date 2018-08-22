@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
-import static password.manager.generators.GeneratorType.LETTERS_AND_DIGITS;
 
 public class AppView {
 
@@ -27,7 +26,7 @@ public class AppView {
 //            answear = scanner.nextInt();
             while(true){
                 try{
-                    if((answear = Integer.parseUnsignedInt(scanner.nextLine())) >= 0 && answear <= 4) break;
+                    if((answear = Integer.parseUnsignedInt(scanner.nextLine().trim())) >= 0 && answear <= 4) break;
                     else
                         System.out.println("Nieprawidłowa odpowiedź.");
                 } catch (NumberFormatException e) {
@@ -66,13 +65,15 @@ public class AppView {
 
         System.out.flush();
         System.out.println("Podaj domenę:");
-        website = sc.nextLine();
+        website = sc.nextLine().trim();
         System.out.println("Podaj login:");
-        login = sc.nextLine();
+        login = sc.nextLine().trim();
         System.out.println("Podaj długość hasła:");
         while(true) {
             try {
-                if ((length = Integer.parseUnsignedInt(sc.nextLine())) > 0) break;
+                if ((length = Integer.parseUnsignedInt(sc.nextLine().trim())) > 0 && length <= 100) break;
+                else
+                    System.out.println("Nie generuje tak długich haseł.");
             } catch (NumberFormatException e) {
                 System.out.println("Nieprawidłowa odpowiedź.");
             }
@@ -85,7 +86,7 @@ public class AppView {
 
         while(true) {
             try {
-                if ((genType = Integer.parseUnsignedInt(sc.nextLine())) >= 0 && genType < GeneratorType.values().length)
+                if ((genType = Integer.parseUnsignedInt(sc.nextLine().trim())) >= 0 && genType < GeneratorType.values().length)
                     break;
                 else
                     System.out.println("Nieprawidłowa odpowiedź.");
@@ -122,9 +123,9 @@ public class AppView {
         String login, website;
 
         System.out.println("Podaj domenę:");
-        website = sc.nextLine();
+        website = sc.nextLine().trim();
         System.out.println("Podaj login:");
-        login = sc.nextLine();
+        login = sc.nextLine().trim();
 
         FilesFacade filesFacade = new FilesFacade();
         List<String> list = filesFacade.readFile("test.csv");
@@ -149,9 +150,9 @@ public class AppView {
         String login, website;
 
         System.out.println("Podaj domenę:");
-        website = sc.nextLine();
+        website = sc.nextLine().trim();
         System.out.println("Podaj login:");
-        login = sc.nextLine();
+        login = sc.nextLine().trim();
 
         FilesFacade filesFacade = new FilesFacade();
         List<String> list = filesFacade.readFile("test.csv");
@@ -174,10 +175,7 @@ public class AppView {
 //        for(String li : list){
 //            System.out.println(li);
 //        }
-
-
     }
-
 }
 
 

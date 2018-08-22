@@ -28,8 +28,8 @@ public class CSVFileWriter {
     }
 
     public void write(String path, List<String> list) throws IOException{
-        ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource(path).getFile());
+//        ClassLoader classLoader = getClass().getClassLoader();
+//        File file = new File(classLoader.getResource(path).getFile());
 
         CSVWriter writer = new CSVWriter(
                 new FileWriter(Paths.get(PATH + "\\" + path).toFile(), false),
